@@ -2,6 +2,15 @@ body {
     background-color: LightSteelBlue;
 }
 
+button {
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.playerSelectors:active{
+    background-color: red;
+}
+
 .XO {
     border-color: black;
     background-color: white;
