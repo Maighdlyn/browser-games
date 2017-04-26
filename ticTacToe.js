@@ -4,68 +4,36 @@ $(document).ready(function () {
         messageElem.innerText = messageText;
     }
 
-    var space = ['', '', '', '', '', '', '', '', '']
+     function check() {
+    var space0 = document.getElementById('space0').textContent;
+    var space1 = document.getElementById('space1').textContent;
+    var space2 = document.getElementById('space2').textContent;
+    var space3 = document.getElementById('space3').textContent;
+    var space4 = document.getElementById('space4').textContent;
+    var space5 = document.getElementById('space5').textContent;
+    var space6 = document.getElementById('space6').textContent;
+    var space7 = document.getElementById('space7').textContent;
+    var space8 = document.getElementById('space8').textContent;
 
-    function updateBoard() {
-        document.getElementById('space0').textContent = space[0];
-        document.getElementById('space1').textContent = space[1];
-        document.getElementById('space2').textContent = space[2];
-        document.getElementById('space3').textContent = space[3];
-        document.getElementById('space4').textContent = space[4];
-        document.getElementById('space5').textContent = space[5];
-        document.getElementById('space6').textContent = space[6];
-        document.getElementById('space7').textContent = space[7];
-        document.getElementById('space8').textContent = space[8];
-    };
-
-  
-    
-   function updateArray(letter) {
-        if (this === document.getElementById('space8')){
-            space[0] = letter};
-        
-        $('#space1').click(function () {
-            space[1] = letter
-        });
-        $('#space2').click(function () {
-            space[2] = letter
-        });
-        updateBoard();
-        console.log(space);
-    };
-    
-
-    function check() {
-        /*        var space0 = document.getElementById('space0').textContent;
-                var space1 = document.getElementById('space1').textContent;
-                var space2 = document.getElementById('space2').textContent;
-                var space3 = document.getElementById('space3').textContent;
-                var space4 = document.getElementById('space4').textContent;
-                var space5 = document.getElementById('space5').textContent;
-                var space6 = document.getElementById('space6').textContent;
-                var space7 = document.getElementById('space7').textContent;
-                var space8 = document.getElementById('space8').textContent;
-        */
-        if (space[0] === space[1] && space[1] === space[2] && space[0] != "") {
+  //  function check() {
+        if (space0 === space1 && space1 === space2 && space0 != "") {
             showMessage("You Win! Top Across!");
-        } else if (space[3] === space[4] && space[4] === space[5] && space[3] != "") {
+        } else if (space3 === space4 && space4 === space5 && space3 != "") {
             showMessage("You Win! Middle Across!");
-        } else if (space[6] === space[7] && space[7] === space[8] && space[6] != "") {
+        } else if (space6 === space7 && space7 === space8 && space6 != "") {
             showMessage("You Win! Bottom Across!");
-        } else if (space0 === space[3] && space[3] === space[6] && space[3] != "") {
+        } else if (space0 === space3 && space3 === space6 && space3 != "") {
             showMessage("You Win! Left Down!");
-        } else if (space[1] === space[4] && space[4] === space[7] && space[1] != "") {
+        } else if (space1 === space4 && space4 === space7 && space1 != "") {
             showMessage("You Win! Middle Down!");
-        } else if (space[2] === space[5] && space[5] === space[8] && space[5] != "") {
+        } else if (space2 === space5 && space5 === space8 && space5 != "") {
             showMessage("You Win! Right Down!");
-        } else if (space[0] === space[4] && space[4] === space[8] && space[0] != "") {
+        } else if (space0 === space4 && space4 === space8 && space0 != "") {
             showMessage("You Win! Diagonal!");
-        } else if (space[2] === space[4] && space[4] === space[6] && space[2] != "") {
+        } else if (space2 === space4 && space4 === space6 && space2 != "") {
             showMessage("You Win! Diagonal!");
         };
     };
-
-
 
     $('#twoPlayer').click(function () {
         var clickCounter = 0;
@@ -73,19 +41,14 @@ $(document).ready(function () {
             if (this.textContent === "") {
                 clickCounter += 1;
                 if (clickCounter % 2 == 0) {
-                    updateArray("O");
-                    console.log("should be 'O'")
+                    this.innerText = "O";
                 } else {
-                    updateArray("X");
-                    console.log("should be 'X'")
+                    this.innerText = "X";
                 }
             };
             check();
         });
     });
-   
-    
-
 
     $('#onePlayer').click(function () {
         $('.XO').click(function () {
@@ -93,12 +56,24 @@ $(document).ready(function () {
                 this.innerHTML = "X";
             };
 
-            var randomSpace = Math.floor(Math.random() * 9);
-            console.log(randomSpace);
-
-
-            //check that space is empty
-            //assign "O" to that space
+            
+            var spaceArray = ["space0", "space1", "space2", "space3", "space4", "space5", "space6", "space7", "space8"];
+   /*         for (var i = 8; i >= 0; i - 1) {
+                if (spaceArray[i] != "") {
+                    spaceArray.slice(i);
+                };
+            }
+            console.log("spaceArray = ", spaceArray)
+            var randomNumber = Math.floor(Math.random() * spaceArray.length);
+            var randomSpace = document.getElementById(spaceArray[randomNumber]);
+            randomSpace.innerText = "O";
+*/
+            /*pseudocode:
+                        SELECTED-BOX = randomized box from .XO
+                        if (SELECTED-BOX.textContent === "") {
+                            SELECTED-BOX.innerHTML = "O";
+                        };
+            */
             check();
         });
 
