@@ -4,20 +4,20 @@ $(document).ready(function () {
         messageElem.innerText = messageText;
     }
 
-     function check() {
-    var space0 = document.getElementById('space0').textContent;
-    var space1 = document.getElementById('space1').textContent;
-    var space2 = document.getElementById('space2').textContent;
-    var space3 = document.getElementById('space3').textContent;
-    var space4 = document.getElementById('space4').textContent;
-    var space5 = document.getElementById('space5').textContent;
-    var space6 = document.getElementById('space6').textContent;
-    var space7 = document.getElementById('space7').textContent;
-    var space8 = document.getElementById('space8').textContent;
+    function check() {
+        var space0 = document.getElementById('space0').textContent;
+        var space1 = document.getElementById('space1').textContent;
+        var space2 = document.getElementById('space2').textContent;
+        var space3 = document.getElementById('space3').textContent;
+        var space4 = document.getElementById('space4').textContent;
+        var space5 = document.getElementById('space5').textContent;
+        var space6 = document.getElementById('space6').textContent;
+        var space7 = document.getElementById('space7').textContent;
+        var space8 = document.getElementById('space8').textContent;
 
-  //  function check() {
         if (space0 === space1 && space1 === space2 && space0 != "") {
             showMessage("You Win! Top Across!");
+            
         } else if (space3 === space4 && space4 === space5 && space3 != "") {
             showMessage("You Win! Middle Across!");
         } else if (space6 === space7 && space7 === space8 && space6 != "") {
@@ -36,6 +36,7 @@ $(document).ready(function () {
     };
 
     $('#twoPlayer').click(function () {
+        $(this).addClass('highlight');
         var clickCounter = 0;
         $('.XO').click(function () {
             if (this.textContent === "") {
@@ -56,24 +57,19 @@ $(document).ready(function () {
                 this.innerHTML = "X";
             };
 
-            
             var spaceArray = ["space0", "space1", "space2", "space3", "space4", "space5", "space6", "space7", "space8"];
-   /*         for (var i = 8; i >= 0; i - 1) {
-                if (spaceArray[i] != "") {
-                    spaceArray.slice(i);
+            var emptySpacesArray = [];
+            for (var i = 0; i <= 8; i++) {
+                if (document.getElementById(spaceArray[i]).textContent === "") {
+                    emptySpacesArray.push(spaceArray[i]);
                 };
             }
-            console.log("spaceArray = ", spaceArray)
-            var randomNumber = Math.floor(Math.random() * spaceArray.length);
-            var randomSpace = document.getElementById(spaceArray[randomNumber]);
+            console.log("emptySpacesArray = ", emptySpacesArray);
+
+            var randomNumber = Math.floor(Math.random() * emptySpacesArray.length);
+            var randomSpace = document.getElementById(emptySpacesArray[randomNumber]);
             randomSpace.innerText = "O";
-*/
-            /*pseudocode:
-                        SELECTED-BOX = randomized box from .XO
-                        if (SELECTED-BOX.textContent === "") {
-                            SELECTED-BOX.innerHTML = "O";
-                        };
-            */
+
             check();
         });
 

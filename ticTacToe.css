@@ -7,10 +7,6 @@ button {
   padding: 10px;
 }
 
-.playerSelectors:active{
-    background-color: red;
-}
-
 .XO {
     border-color: black;
     background-color: white;
@@ -19,4 +15,8 @@ button {
     height: 100px;
     width: 100px;
     font-size: 50px;
+}
+
+.active{
+    background-color: blue;
 }
