@@ -64,7 +64,6 @@ $(document).ready(function () {
                     emptySpacesArray.push(spaceArray[i]);
                 };
             }
-            console.log("emptySpacesArray = ", emptySpacesArray);
 
             var randomNumber = Math.floor(Math.random() * emptySpacesArray.length);
             var randomSpace = document.getElementById(emptySpacesArray[randomNumber]);

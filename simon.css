@@ -1,0 +1,23 @@
+body{
+    background-color: #C8C8CD;
+}
+.colorButton{
+        border-radius: 75px;
+    padding: 150px;
+}
+
+#red{
+    background-color: #ED0A3F;
+}
+
+#yellow{
+    background-color: #FBE870;
+}
+
+#blue{
+    background-color: #0066FF
+}
+
+#green{
+    background-color: #3AA655;
+}

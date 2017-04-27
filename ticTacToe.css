@@ -17,6 +17,6 @@ button {
     font-size: 50px;
 }
 
-.active{
+.highlight{
     background-color: blue;
 }
