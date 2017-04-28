@@ -1,0 +1,76 @@
+body {
+	background-color: #C8C8CD;
+}
+
+.gameDiv {
+	width: 526px;
+	height: 526px;
+	margin: auto;
+	margin-top: 100px;
+	background-color: #282828;
+	border-radius: 100%;
+	z-index: 0;
+}
+
+.colorButton {
+	width: 200px;
+	height: 200px;
+	z-index: 1;
+}
+
+#red {
+	border-radius: 100% 0% 0% 0%;
+	margin: 45px 15px 15px 45px;
+	background-color: #ED0A3F;
+	
+}
+
+#yellow {
+	border-radius: 0% 100% 0% 0%;
+	margin: 45px 45px 15px 15px;
+	background-color: #FFEB00;
+}
+
+#blue {
+	border-radius: 0% 0% 0% 100%;
+	margin: 15px 15px 45px 45px;
+	background-color: #0066FF
+}
+
+#green {
+	border-radius: 0% 0% 100% 0%;
+	margin: 15px 45px 45px 15px;
+	background-color: #3AA655;
+}
+
+#centerCircle {
+	width: 260px;
+	height: 260px;
+	background-color: #282828;
+	border-radius: 100%;
+	margin: auto;
+	margin-top: -380px;
+	position: relative;
+	z-index: 3;
+}
+
+.menuButtons {
+	width: 50px;
+	height: 50px;
+	background-color: #ED0A3F;
+	border-radius: 100%;
+	margin: 25px 0px 0px 238px;
+	position: relative;
+	z-index: 4;
+}
+
+#screen {
+	color: #ED0A3F;
+	background-color: #500000;
+	font-family: 'VT323';
+	width: 140px;
+	text-align: center;
+	margin: -175px 0px 0px 193px;
+	position: relative;
+	z-index: 4;
+}
