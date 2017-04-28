@@ -18,43 +18,29 @@ body {
 	z-index: 1;
 }
 
-.red {
+#red {
 	border-radius: 100% 0% 0% 0%;
 	margin: 45px 15px 15px 45px;
 	background-color: #ED0A3F;
+	
 }
 
-.redLight {
-	background-color: #FD5B78;
-}
-
-.yellow {
+#yellow {
 	border-radius: 0% 100% 0% 0%;
 	margin: 45px 45px 15px 15px;
 	background-color: #FFEB00;
 }
 
-.yellowLight {
-	background-color: #FFFF99;
-}
-
-.blue {
+#blue {
 	border-radius: 0% 0% 0% 100%;
 	margin: 15px 15px 45px 45px;
 	background-color: #0066FF
 }
 
-.blueLight {
-	background-color: #4997D0;
-}
-
-.green {
+#green {
 	border-radius: 0% 0% 100% 0%;
 	margin: 15px 45px 45px 15px;
 	background-color: #3AA655;
-}
-.greenLight {
-	background-color: #9DE093;
 }
 
 #centerCircle {
