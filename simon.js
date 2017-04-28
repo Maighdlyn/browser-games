@@ -58,7 +58,6 @@ $(document).ready(function () {
 	function playFunction(color) {
 		var colorClicked = $(color).attr('id');
 		userSequence.push(colorClicked);
-		console.log("userSequence = ", userSequence);
 		if (userSequence.length === randomSequence.length) {
 			if (randomSequence.toString() === userSequence.toString()) {
 				document.querySelector('#screen').innerText = "GOOD JOB";

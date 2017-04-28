@@ -16,27 +16,27 @@ $(document).ready(function () {
 		var space8 = document.getElementById('space8').textContent;
 
 		if (space0 === space1 && space1 === space2 && space0 != "") {
-			showMessage("You Win! Top Across!");
+			showMessage("Winner! Top Across!");
 
 		} else if (space3 === space4 && space4 === space5 && space3 != "") {
-			showMessage("You Win! Middle Across!");
+			showMessage("Winner! Middle Across!");
 		} else if (space6 === space7 && space7 === space8 && space6 != "") {
-			showMessage("You Win! Bottom Across!");
+			showMessage("Winner! Bottom Across!");
 		} else if (space0 === space3 && space3 === space6 && space3 != "") {
-			showMessage("You Win! Left Down!");
+			showMessage("Winner! Left Down!");
 		} else if (space1 === space4 && space4 === space7 && space1 != "") {
-			showMessage("You Win! Middle Down!");
+			showMessage("Winner! Middle Down!");
 		} else if (space2 === space5 && space5 === space8 && space5 != "") {
-			showMessage("You Win! Right Down!");
+			showMessage("Winner! Right Down!");
 		} else if (space0 === space4 && space4 === space8 && space0 != "") {
-			showMessage("You Win! Diagonal!");
+			showMessage("Winner! Diagonal!");
 		} else if (space2 === space4 && space4 === space6 && space2 != "") {
-			showMessage("You Win! Diagonal!");
+			showMessage("Winner! Diagonal!");
 		};
 	};
 
 	$('#twoPlayer').click(function () {
-		$(this).addClass('highlight');
+		$(this).removeClass('buttonColors').addClass('selectedButton')
 		var clickCounter = 0;
 		$('.XO').click(function () {
 			if (this.textContent === "") {
@@ -52,6 +52,7 @@ $(document).ready(function () {
 	});
 
 	$('#onePlayer').click(function () {
+		$(this).removeClass('buttonColors').addClass('selectedButton')
 		$('.XO').click(function () {
 			if (this.textContent === "") {
 				this.innerHTML = "X";
