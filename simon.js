@@ -28,16 +28,18 @@ $(document).ready(function () {
 		}, 500);
 	};
 
-// This section creates the randomized sequence of colors to be memorized and puts it in an array called randomSequence
+	// This section creates the randomized sequence of colors to be memorized and puts it in an array called randomSequence
 	var colorArray = ["red", "yellow", "blue", "green"];
 	var randomSequence = [];
+
 	function addRandomColor() {
 		var randomNumber = Math.floor(Math.random() * 4);
 		randomSequence.push(colorArray[randomNumber]);
 	};
 
-// randomSequenceLights() makes the gameboard light up in the order of the randomSequence array that was created in the previous step
+	// randomSequenceLights() makes the gameboard light up in the order of the randomSequence array that was created in the previous step
 	var time = 0;
+
 	function randomSequenceLights() {
 		for (var i = 0; i < randomSequence.length; i++) {
 			time = (i * 1000) + 2000;
@@ -53,15 +55,18 @@ $(document).ready(function () {
 		};
 	};
 
-// playFunction(color) keeps track of the colors that the user clicks and compares them to the randomSequence.
+	// playFunction(color) keeps track of the colors that the user clicks and compares them to the randomSequence.
 	var userSequence = [];
+
 	function playFunction(color) {
 		var colorClicked = $(color).attr('id');
 		userSequence.push(colorClicked);
 		if (userSequence.length === randomSequence.length) {
 			if (randomSequence.toString() === userSequence.toString()) {
 				document.querySelector('#screen').innerText = "GOOD JOB";
-				setTimeout(function(){document.querySelector('#screen').innerText = "- -"}, 1000);
+				setTimeout(function () {
+					document.querySelector('#screen').innerText = "- -"
+				}, 1000);
 				userSequence = [];
 				addRandomColor();
 				setTimeout(randomSequenceLights(), 3000);
@@ -71,7 +76,7 @@ $(document).ready(function () {
 		};
 	};
 
-//This section creates click events using the previously defined functions.
+	//This section creates click events using the previously defined functions.
 	$('#start').click(function () {
 		randomSequence = [];
 		userSequence = [];
